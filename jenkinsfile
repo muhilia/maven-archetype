@@ -4,7 +4,8 @@ stages {
   stage('Maven install') {
     steps {
 withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'Maven', mavenSettingsConfig: '', traceability: true) {
-    sh 'mvn clean install'
+    sh 'mvn clean'
+    sh 'mvn clean install -X'
 }
     }
   }
